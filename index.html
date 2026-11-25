@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emote Studio pour FiveM</title>
+  <meta name="description" content="Crée des emotes FiveM à partir d'une vidéo ou de ta webcam, retouche-les en 3D sur le vrai squelette GTA V et exporte une ressource prête à streamer.">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-row">
+      <a class="brand" href="#">
+        <img src="assets/icon.png" alt="" width="28" height="28">
+        <span>Emote Studio</span>
+      </a>
+      <nav class="links" aria-label="Sections">
+        <a href="#etapes">Fonctionnement</a>
+        <a href="#export">Export FiveM</a>
+        <a href="#ia">Pilotage par IA</a>
+      </nav>
+      <a class="button small" href="#telecharger">Télécharger</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="key" aria-hidden="true"></span>Éditeur d'emotes pour GTA V et FiveM</p>
+          <h1>D'une vidéo à une emote FiveM, sans quitter le studio</h1>
+          <p class="lead">Filme un geste ou importe une vidéo, retouche la pose sur le vrai squelette du ped, puis exporte une ressource prête à streamer, animation compilée comprise.</p>
+          <div class="actions">
+            <a class="button" href="#telecharger">Télécharger pour Windows</a>
+            <a class="button ghost" href="#etapes">Voir les trois étapes</a>
+          </div>
+          <p class="meta">Version 0.2.0 · Windows 10 et 11, 64 bits · sans installation</p>
+        </div>
+        <figure class="window hero-shot">
+          <img src="assets/studio.png" width="1456" height="939" alt="Emote Studio : ped au bras levé tenant un téléphone, arbre des os à gauche, inspecteur et props à droite, timeline en bas">
+        </figure>
+      </div>
+    </section>
+
+    <section id="etapes" class="section">
+      <div class="wrap">
+        <h2>Trois étapes, un seul outil</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-index">01</span>
+            <h3>Capturer</h3>
+            <p>Importe une vidéo (mp4, mov, mkv…) ou enregistre-toi à la webcam. La détection du corps et des doigts tourne en local, sur ta carte graphique, et le mouvement est transposé sur le squelette GTA V.</p>
+          </li>
+          <li>
+            <span class="step-index">02</span>
+            <h3>Retoucher</h3>
+            <p>Corrige la pose dans le viewport 3D : anneaux de rotation, déplacement par IK de la main, du pied ou du bassin, timeline image par image, copier-coller de pose en miroir.</p>
+          </li>
+          <li>
+            <span class="step-index">03</span>
+            <h3>Exporter</h3>
+            <p>Un clic produit une ressource FiveM complète : manifeste, animation compilée en <code>.ycd</code> et placement des props, avec les entrées pour mc_emotes, dpemotes, rpemotes et scully_emotemenu.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="wrap split-grid">
+        <figure class="window">
+          <img src="assets/viewport.png" width="604" height="605" alt="Viewport : bras levé par IK, l'épaule garde son volume">
+        </figure>
+        <div>
+          <h2>Le vrai squelette, pas une approximation</h2>
+          <p>Au premier lancement, le studio lit dans ton installation de GTA V le squelette et le corps des peds freemode, homme et femme. Lecture seule : rien n'est modifié dans le jeu.</p>
+          <ul class="facts">
+            <li>IK deux os pour les bras et les jambes, bassin qui descend pieds plantés</li>
+            <li>La clavicule suit le bras levé : l'épaule garde sa forme, en jeu aussi</li>
+            <li>Aperçu skinné en quaternions duaux, sans épaule écrasée</li>
+            <li>Bascule homme / femme : les clés suivent les noms d'os</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split reverse">
+      <div class="wrap split-grid">
+        <figure class="window">
+          <img src="assets/timeline.png" width="606" height="234" alt="Timeline : une ligne par os animé, clés en losange">
+        </figure>
+        <div>
+          <h2>Une timeline qui se lit d'un coup d'œil</h2>
+          <p>Une ligne par os animé, une ligne pour toutes les clés. Clic pour se placer, clic droit pour supprimer une clé, Ctrl + molette pour zoomer.</p>
+          <ul class="facts">
+            <li>Interpolation linéaire, Bézier ou en palier</li>
+            <li>Boucle propre : la dernière image rejoint la première à l'export</li>
+            <li>Annuler et rétablir sur chaque geste, sauvegarde automatique chaque minute</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="export" class="section">
+      <div class="wrap split-grid">
+        <div>
+          <h2>Une ressource prête à streamer</h2>
+          <p>Le studio écrit la ressource, compile l'animation avec CodeWalker et prépare l'entrée à coller dans ton menu d'emotes. Jusqu'à deux props (Prop et SecondProp), placés à la souris dans le viewport et repris tels quels dans le placement de l'emote.</p>
+          <ul class="facts">
+            <li>Props GTA par nom de modèle, ou depuis un <code>.ydr</code> / <code>.ydd</code></li>
+            <li>Options d'emote : boucle, haut du corps en mouvement, figée sur la dernière image</li>
+            <li>Projet <code>.emote</code> lisible, pour reprendre le travail plus tard</li>
+          </ul>
+        </div>
+        <pre class="tree" aria-label="Arborescence de la ressource générée"><code><span class="dim">mcs_emotes/</span>
+├── fxmanifest.lua
+├── stream/
+│   └── mcs@salut.ycd     <span class="dim">animation</span>
+└── emotes_snippets.txt   <span class="dim">entrées de menu</span></code></pre>
+      </div>
+    </section>
+
+    <section id="ia" class="section">
+      <div class="wrap split-grid">
+        <pre class="tree"><code><span class="dim"># une seule commande pour brancher Claude</span>
+claude mcp add emote-studio -- EmoteStudio.exe mcp
+
+<span class="dim"># puis, en langage naturel</span>
+« Lève le bras droit pour un salut,
+  boucle sur 2 secondes, exporte-le »</code></pre>
+        <div>
+          <h2>Pilotable par une IA, en direct</h2>
+          <p><code>EmoteStudio.exe mcp</code> est un serveur MCP : une IA comme Claude pose des clés, déplace les membres, ajoute des props, prend un rendu pour vérifier son travail et exporte la ressource.</p>
+          <ul class="facts">
+            <li>Chaque modification apparaît dans la fenêtre et s'annule avec Ctrl+Z</li>
+            <li>Le studio est lancé automatiquement s'il est fermé</li>
+            <li>Pont local uniquement, protégé par un jeton</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="wrap split-grid">
+        <figure class="window settings-shot">
+          <img src="assets/settings.png" width="480" height="152" alt="Paramètres : langue et couleur d'accent">
+        </figure>
+        <div>
+          <h2>Ton espace, tel que tu l'as laissé</h2>
+          <p>Panneaux déplaçables, regroupables en onglets ou masqués, retrouvés à chaque lancement. Interface en français ou en anglais, couleur d'accent au choix.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="telecharger" class="section download">
+      <div class="wrap">
+        <h2>Télécharger Emote Studio</h2>
+        <p>Un dossier autonome d'environ 215 Mo : décompresse-le et lance <code>EmoteStudio.exe</code>. Ni .NET ni runtime Visual C++ à installer.</p>
+        <dl class="specs">
+          <div><dt>Version</dt><dd>0.2.0</dd></div>
+          <div><dt>Système</dt><dd>Windows 10 ou 11, 64 bits</dd></div>
+          <div><dt>Requis</dt><dd>GTA V installé, pour le squelette et le corps des peds</dd></div>
+          <div><dt>Langues</dt><dd>Français, anglais</dd></div>
+        </dl>
+        <a class="button" href="https://github.com/JusteKal/emote-studio/releases">Télécharger la dernière version</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <span>Emote Studio 0.2.0</span>
+      <span>Projet indépendant, sans lien avec Rockstar Games ni Cfx.re. GTA V et FiveM appartiennent à leurs détenteurs.</span>
+    </div>
+  </footer>
+</body>
+</html>
