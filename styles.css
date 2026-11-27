@@ -91,6 +91,21 @@ code {
 
 .links a:hover { color: var(--text); }
 
+/* Changement de langue : discret, toujours visible (même sur petit écran) */
+.lang {
+  color: var(--text-2);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  transition: color 120ms var(--ease), background-color 120ms var(--ease);
+}
+
+.lang:hover { color: var(--text); background: var(--raised); }
+
 /* Boutons */
 
 .button {
@@ -121,6 +136,7 @@ code {
 
 .button:focus-visible,
 .links a:focus-visible,
+.lang:focus-visible,
 .brand:focus-visible {
   outline: 2px solid var(--accent-hover);
   outline-offset: 2px;
@@ -322,6 +338,7 @@ h3 { margin: 16px 0 8px; font-size: 20px; font-weight: 600; }
 @media (max-width: 640px) {
   .links { display: none; }
   .nav-row { justify-content: space-between; }
+  .lang { margin-left: auto; }
   .specs { grid-template-columns: 1fr; }
   .tree { padding: 20px; font-size: 12px; }
   .wrap { width: calc(100% - 32px); }
