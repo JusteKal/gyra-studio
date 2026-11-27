@@ -15,4 +15,4 @@ python -m http.server 8765
 
 puis ouvrir http://localhost:8765. Hébergeable tel quel (GitHub Pages, Netlify, Cloudflare Pages…).
 
-À mettre à jour à chaque version : le numéro (`0.2.0`, trois endroits dans `index.html` et autant dans `en/index.html`) et le lien du bouton « Télécharger la dernière version », qui pointe vers les releases du dépôt `JusteKal/emote-studio` (privé : à remplacer par un lien public avant de publier le site).
+À mettre à jour à chaque version : le numéro (`0.2.0`, trois endroits dans `index.html` et autant dans `en/index.html`). Le bouton « Télécharger sur Patreon » / « Download on Patreon » mène à la page Patreon, où sont publiées les versions.
