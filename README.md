@@ -1,6 +1,6 @@
-# Emote Studio : site vitrine
+# Gyra : site vitrine
 
-Page statique (HTML et CSS, aucune dépendance ni build) qui présente Emote Studio, l'éditeur d'emotes GTA V / FiveM.
+Page statique (HTML et CSS, aucune dépendance ni build) qui présente Gyra, l'éditeur d'emotes GTA V / FiveM.
 
 - `index.html` : le contenu, en français ;
 - `en/index.html` : la version anglaise (mêmes styles et images ; lien FR / EN dans la barre de navigation) ;
